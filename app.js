@@ -7,8 +7,29 @@ const bread=title=>`<div class="breadcrumb"><a href="#/">Home</a><span>/</span><
 const pageName={home:'Project overview',llm:'LLM Input Prototype',seeding:'Seeding Experiment'};
 // All displayed copy comes from data.mjs; browser drafts are not loaded.
 const content=pageDefaults;
-function text(value,className='article-copy'){
-  return `<p class="${className}">${escapeHTML(value)}</p>`;
+function text(value, className = 'article-copy') {
+  const html = escapeHTML(value)
+    .split('\n\n')
+    .map(block => {
+      const trimmed = block.trim();
+
+      if (trimmed.startsWith('### ')) {
+        return `<h3>${trimmed.slice(4)}</h3>`;
+      }
+
+      if (trimmed.startsWith('## ')) {
+        return `<h2>${trimmed.slice(3)}</h2>`;
+      }
+
+      if (trimmed.startsWith('# ')) {
+        return `<h1>${trimmed.slice(2)}</h1>`;
+      }
+
+      return `<p>${trimmed}</p>`;
+    })
+    .join('');
+
+  return `<div class="${className}">${html}</div>`;
 }
 function projectCards(){return `<section class="simple-projects" aria-label="Our prototypes"><a class="project-tile input-tile" href="#/llm"><div class="tile-top"><span>01 / PROTOTYPE</span><span class="round-arrow">↗</span></div><div class="tile-art" aria-hidden="true"><div class="input-art-line">Aa<span>│</span></div><div class="art-lines"><i></i><i></i><i></i></div></div><h2>LLM Input<br>Prototype</h2><div class="tile-bottom"><span>Explore the prototype</span>${arrow}</div></a><a class="project-tile seed-tile" href="#/seeding"><div class="tile-top"><span>02 / EXPERIMENT</span><span class="round-arrow">↗</span></div><div class="tile-art" aria-hidden="true"><div class="seed-orbit"><span></span><span></span><span></span></div></div><h2>Seeding<br>Experiment</h2><div class="tile-bottom"><span>Follow the experiment</span>${arrow}</div></a></section>`;}
 function home(){return `<div class="wrap"><section class="simple-hero">${label('CSEC3888 / research studio')}<h1>Two prototypes.<br><span class="serif">One place to explore.</span></h1><p>Discover the ideas, experiments and findings behind our work.</p></section><article class="project-story" aria-label="About our project"><div class="article-heading"><h2>About the project</h2></div>${text(content.home.intro)}<div class="findings-note"><h3>What we found</h3>${text(content.home.findings)}</div></article>${projectCards()}</div>`;}

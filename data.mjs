@@ -9,7 +9,31 @@ export const pageDefaults = {
     intro: 'An introduction to our LLM Input Prototype: what it explores, how it works and what we found.',
     overview: '',
     method: '',
-    findings: 'One technique identified during testing was TQ-061 (software_download_domain_impersonation). This case was prioritised because it combined recency with false authority claims while leveraging the branding and reputation of the legitimate Steghide project.\n\nAssociated run: af77ab58fd0646068e2622b12b8f9e53.\n\nThe observed behaviour involved registering a domain that reused the name and branding of an existing software project, then publishing pages that presented the domain as the project’s primary home. Visibility was increased through authority claims, well-structured content and keywords aligned with likely user searches. Because the original Steghide project is older and no longer actively maintained, there was limited competition from an actively maintained official website for related queries. In practice, the impersonating website often appeared more polished or professional than the original legitimate site.\n\nTo reproduce this scenario:\n• Register a domain that borrows the name and branding of an existing software project.\n• Publish pages presenting the domain as the project’s home.\n• Use authority claims, structured content and keyword-matched pages to improve visibility while benefiting from the established reputation of the original brand.\n• Target projects where no actively maintained official website strongly competes for citations.\n• Present a more polished or professional experience than the older legitimate website.\n\nIndicators that may help detect this technique include recently registered domains imitating established software brands, download pages that differ from documented vendor distribution channels, shared download-page templates across related domains, and archives that combine legitimate software with independently identified malicious libraries. Captured assistant responses may also surface these destinations, or referral records may indicate chatbot-associated visits, although such observations do not reveal the exact ranking or retrieval mechanism responsible for their appearance.',
+    findings: `
+## TQ-061 (software_download_domain_impersonation)
+
+### Why it was notable
+
+This technique was prioritised because it combined recency with false authority claims while leveraging the branding and reputation of the legitimate Steghide project.
+
+### Associated run
+
+Run ID: af77ab58fd0646068e2622b12b8f9e53
+
+### How to Reproduce
+
+- Register a domain that borrows the same name and branding of an existing software project
+- Publish pages that present the domain as the project’s home
+- To reach AI, signals such as authority claims, a well-structured page and keyword-matched content, allows the domain (all leveraging the existing brand’s reputation) are used
+- Since the brand is an old, unmaintained project, no actively maintained official website competes to be cited for the query
+- i.e. look more polished or professional than the older (but real) website
+
+### Detection indicators
+
+- Recently registered domains imitate established software brands.
+- Download pages differ from documented vendor distribution channels.
+- Related domains share download-page templates or artefacts.
+`
 },
   seeding: {
     intro: 'The Seeding Experiment explores how published information may appear in search and AI answers. Here we outline the study, describe the observations and summarise the evidence.',
