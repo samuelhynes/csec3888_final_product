@@ -40,7 +40,7 @@ Run ID: af77ab58fd0646068e2622b12b8f9e53
 
 ### Why it was notable
 
-This technique was notable because it targets the AI system directly rather than attempting to influence rankings or authority signals. It tests whether externally retrieved content can override the model's intended behaviour by embedding instructions that conflict with a user's request. If successful, the technique could alter responses without requiring control over the model itself, making it a commonly discussed prompt injection approach.
+This technique was notable because it tested whether instructions embedded within retrieved content could influence or override a model's intended behaviour. It represents a well-known prompt injection approach that targets the AI system directly rather than the user.
 
 ### Associated run
 
@@ -63,7 +63,7 @@ Run ID: b6dc11e07ccc430883f86d2d345b1cff
 
 ### Why it was notable
 
-This technique was notable because it attempts to influence AI systems through content that is invisible to ordinary users. By separating what a human sees from what a machine processes, it creates an opportunity to deliver instructions without obvious signs of manipulation. The approach is also challenging to verify through normal browsing alone, making transparency and traceability important considerations during analysis.
+This technique was notable because it attempted to influence AI systems through content hidden from ordinary users. By separating what humans see from what machines process, it offers a less visible method of potential manipulation.
 
 ### Associated run
 
