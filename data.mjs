@@ -33,7 +33,10 @@ export const pageFields = {
   ],
 };
 // Replace these empty strings with the actual separate website addresses.
-export const prototypeLinks = {llm:'',seeding:''};
+export const prototypeLinks = {
+  llm: 'https://llmproto.csec3888.com/',
+  seeding: 'https://monitor.csec3888.com/'
+};
 export function routeFromHash(hash) {
   const route=hash.replace(/^#\/?/,'').replace(/\/$/,'');
   if(route===''||route==='home')return {page:'home'};
