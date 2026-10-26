@@ -7,8 +7,8 @@ export const pageDefaults = {
   },
   llm: {
     intro: 'An introduction to our LLM Input Prototype: what it explores, how it works and what we found.',
-    overview: '',
-    method: '',
+    overview: `[Name] investigates how AI models respond to users’ questions and which sources they cite to support it. For each submitted query, the prototype prompts several AI models (GPT-5.4 Nano, Gemini 2.5 Flash Lite, Ling 3.0 Flash and DeepSeek V4.1 Flash), captures their answers and citations and stores them for analysis. The prototype analyses each cited page against a playbook of 64 known manipulation techniques, flagging any findings with a confidence score within the final report.`,
+    method: ``,
     findings: `
 ## TQ-061 (software_download_domain_impersonation)
 
@@ -96,7 +96,7 @@ export const pageFields = {
     {key:'intro',title:'Short introduction',prompt:'Briefly introduce this prototype.'},
     {key:'overview',number:'01',title:'About the prototype',prompt:'Add your introduction here.'},
     {key:'method',number:'02',title:'How it works',prompt:'Describe your approach here.'},
-    {key:'findings',number:'03',title:'Findings',prompt:'Share your findings here.'},
+    {key:'findings',number:'03',title:'Most Crucial Findings',prompt:'Share your findings here.'},
   ],
   seeding: [
     {key:'intro',title:'Short introduction',prompt:'Briefly introduce this experiment.'},
