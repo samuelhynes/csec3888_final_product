@@ -96,7 +96,7 @@ export const pageFields = {
     {key:'intro',title:'Short introduction',prompt:'Briefly introduce this prototype.'},
     {key:'overview',number:'01',title:'About the prototype',prompt:'Add your introduction here.'},
     {key:'method',number:'02',title:'How it works',prompt:'Describe your approach here.'},
-    {key:'findings',number:'03',title:'Most Crucial Findings',prompt:'Share your findings here.'},
+    {key:'findings',number:'03',title:'Most crucial findings',prompt:'Share your findings here.'},
   ],
   seeding: [
     {key:'intro',title:'Short introduction',prompt:'Briefly introduce this experiment.'},
