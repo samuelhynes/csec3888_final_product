@@ -8,25 +8,13 @@ const pageName={home:'Project overview',llm:'LLM Input Prototype',seeding:'Seedi
 // All displayed copy comes from data.mjs; browser drafts are not loaded.
 const content=pageDefaults;
 function text(value, className = 'article-copy') {
+  if (/<[a-z][\s\S]*>/i.test(value)) {
+    return `<div class="${className}">${value}</div>`;
+  }
+
   const html = escapeHTML(value)
     .split('\n\n')
-    .map(block => {
-      const trimmed = block.trim();
-
-      if (trimmed.startsWith('### ')) {
-        return `<h3>${trimmed.slice(4)}</h3>`;
-      }
-
-      if (trimmed.startsWith('## ')) {
-        return `<h2>${trimmed.slice(3)}</h2>`;
-      }
-
-      if (trimmed.startsWith('# ')) {
-        return `<h1>${trimmed.slice(2)}</h1>`;
-      }
-
-      return `<p>${trimmed}</p>`;
-    })
+    .map(block => `<p>${block.trim()}</p>`)
     .join('');
 
   return `<div class="${className}">${html}</div>`;

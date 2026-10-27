@@ -48,12 +48,10 @@
   font-weight: 600;
   line-height: 1.2;
 }
-
 .template-copy h2,
 .article-copy h2 {
   font-size: 1.4rem;
 }
-
 .template-copy h3,
 .article-copy h3 {
   margin: 1.25rem 0 0.25rem;
@@ -62,10 +60,22 @@
   letter-spacing: 0.02em;
   color: var(--ink);
 }
-
 .template-copy p,
 .article-copy p {
   margin: 0 0 1rem;
+}
+.template-copy ul,
+.template-copy ol,
+.article-copy ul,
+.article-copy ol {
+  font-size: 13px;
+  line-height: 1.85;
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
+}
+.template-copy li,
+.article-copy li {
+  margin-bottom: 0.35rem;
 }
 dialog .button{margin-top:5px}
 .story-top h2{letter-spacing:-.035em}
