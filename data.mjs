@@ -7,8 +7,13 @@ export const pageDefaults = {
   },
   llm: {
     intro: 'An introduction to our LLM Input Prototype: what it explores, how it works and what we found.',
-    overview: `[Name] investigates how AI models respond to users’ questions and which sources they cite to support it. For each submitted query, the prototype prompts several AI models (GPT-5.4 Nano, Gemini 2.5 Flash Lite, Ling 3.0 Flash and DeepSeek V4.1 Flash), captures their answers and citations and stores them for analysis. The prototype analyses each cited page against a playbook of 64 known manipulation techniques, flagging any findings with a confidence score within the final report.`,
-    method: ``,
+    overview: `The LLM Input Prototype investigates how AI models respond to users’ questions and which sources they cite to support it. For each submitted query, the prototype prompts several AI models (GPT-5.4 Nano, Gemini 2.5 Flash Lite, Ling 3.0 Flash and DeepSeek V4.1 Flash), captures their answers and citations and stores them for analysis. The prototype analyses each cited page against a playbook of 64 known manipulation techniques, flagging any findings with a confidence score within the final report.`,
+    method: `
+1. **Start an investigation:** Enter your query in the input box on the left and select *Run Investigation*.
+2. **Track progress:** While the investigation is running, the progress panel on the right displays the current stage and overall completion status.
+3. **Review the report:** Once processing is complete, the right-hand panel automatically switches to the report view, presenting the AI responses, cited sources and analysis results.
+4. **Revisit past investigations:** Open a previous report by selecting it from the run history on the left or searching directly using its Run ID.
+5. **Inspect flagged findings:** Review any techniques identified within cited sources, including the confidence score, supporting evidence and the specific GEO technique associated with each finding.`,
     findings: `
 ## TQ-061 (software_download_domain_impersonation)
 
