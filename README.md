@@ -7,10 +7,10 @@ Updated 22/10/2026. Source-edit-only version. The homepage introduces the projec
 From this directory:
 
 ```sh
-python3 -m http.server 4318 --directory dist --bind 127.0.0.1
+python3 -m http.server 4318
 ```
 
-Open `http://127.0.0.1:4318` and keep the terminal running. This task does not configure the CSEC3888.com domain or upload the site.
+Open `http://localhost:4318` and keep the terminal running. This task does not configure the CSEC3888.com domain or upload the site.
 
 ## Replace the text
 
