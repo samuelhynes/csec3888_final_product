@@ -790,3 +790,53 @@ dialog .button {
     grid-column: 1
   }
 }
+
+.seeding-sites {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 14px 0 22px
+}
+
+.seeding-site {
+  background: #f0f3ea;
+  border-radius: 14px;
+  padding: 18px
+}
+
+.seeding-site strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 10px 0 6px
+}
+
+.template-copy .seeding-site p {
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0
+}
+
+.seeding-site-tag {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid #213c3230;
+  color: var(--muted)
+}
+
+.seeding-site-tag-public {
+  background: #dfebd1;
+  border-color: transparent;
+  color: var(--ink)
+}
+
+@media(max-width:600px) {
+  .seeding-sites {
+    grid-template-columns: 1fr
+  }
+}

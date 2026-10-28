@@ -111,6 +111,27 @@ export const pageDefaults = {
 <h3>Making sure nobody got there first</h3>
 <p>Before we published anything, we checked that none of our questions already had an answer online.</p>
 
+<h3>How the experiment is built</h3>
+<p>The experiment runs on three sites, each with a different job.</p>
+
+<div class="seeding-sites">
+  <div class="seeding-site">
+    <span class="seeding-site-tag">Private</span>
+    <strong>Test website</strong>
+    <p>Where we drafted the articles before anything went public. It was never meant to be crawled by search engines or AI platforms.</p>
+  </div>
+  <div class="seeding-site">
+    <span class="seeding-site-tag seeding-site-tag-public">Public</span>
+    <strong>Actual website</strong>
+    <p>The public site at mijnipad.net that carries the fabricated articles. This is the site the AI platforms found and cited.</p>
+  </div>
+  <div class="seeding-site">
+    <span class="seeding-site-tag">Private</span>
+    <strong>Monitor</strong>
+    <p>A password-protected dashboard that records visits to the actual website and checks whether visitors claiming to be search-engine crawlers really are.</p>
+  </div>
+</div>
+
 <h3>Asking the AIs</h3>
 <p>We wrote 11 questions, one per invented product, for example "How much pressure hysteresis does the Sketrix A5 produce?". We put every question to four platforms: Google AI summaries, ChatGPT, Gemini and Claude. Each question was asked three times on each platform, which gave us 132 runs. For every run we saved the question, the time, the full answer and any source the AI cited.</p>
 
