@@ -14,7 +14,7 @@ Open `http://localhost:4318` and keep the terminal running. This task does not c
 
 ## Replace the text
 
-Open `dist/data.mjs` in VS Code. Change the strings inside `pageDefaults`:
+Open `data.mjs` in VS Code. Change the strings inside `pageDefaults`:
 
 - `home.intro` and `home.findings`: homepage article.
 - `llm.intro`, `llm.overview`, `llm.method`, `llm.findings`: LLM page.
@@ -29,7 +29,7 @@ overview: 'Our prototype explores how people interact with language models.',
 method: 'Describe your method here.\n\nAdd another paragraph here.',
 ```
 
-Edit `pageFields` in the same file to change the numbered section headings and blank-section prompts. Edit `dist/app.js` for fixed headings and layout markup; `dist/styles.css` and `dist/simplified.css` control appearance. `dist/index.html` contains the navigation, page metadata and footer.
+Edit `pageFields` in the same file to change the numbered section headings and blank-section prompts. Edit `app.js` for fixed headings and layout markup; `styles.css` and `simplified.css` control appearance. `index.html` contains the navigation, page metadata and footer.
 
 The homepage's initial text is suggested copy, not a new research result. Its bounded conclusion reflects the preserved 07/10/2026 corpus review; it does not assert measured outcomes for either separate prototype. The two prototype pages contain no monitoring case studies, invented experimental findings or statistics.
 
@@ -37,13 +37,13 @@ The website reads only source-file content. Old browser drafts are not loaded or
 
 ## Connect the separate websites
 
-Both pages have an **Open …** button at the bottom. Until supplied, a click displays a short address-not-added message instead of visiting a fake site. Set `prototypeLinks.llm` and `prototypeLinks.seeding` in `dist/data.mjs` to the actual HTTP(S) addresses. Configured links open in a new tab with opener isolation. Links with embedded credentials or unsafe schemes are rejected.
+Both pages have an **Open …** button at the bottom. Until supplied, a click displays a short address-not-added message instead of visiting a fake site. Set `prototypeLinks.llm` and `prototypeLinks.seeding` in `data.mjs` to the actual HTTP(S) addresses. Configured links open in a new tab with opener isolation. Links with embedded credentials or unsafe schemes are rejected.
 
 ## Checks
 
 ```sh
 node --test tests.mjs
-node --check dist/app.js
+node --check app.js
 ```
 
 The site makes no live model calls and contains no API credentials. It does not alter the monitoring pipeline or historical artefacts. Google Fonts is optional with local fallbacks. Publishing remains unapproved; this is a locally served site.
