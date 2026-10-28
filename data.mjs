@@ -6,8 +6,41 @@ export const pageDefaults = {
     findings: 'A central lesson from our research is that visibility and reliability are not the same. An answer can sound confident while its sources need closer examination. A source becoming more visible is not, by itself, evidence of manipulation.\n\nOur reviewed material did not establish a GEO manipulation attempt. Our emphasis is on traceable evidence, plausible alternative explanations and clear limits on what we can conclude.',
   },
   llm: {
-    intro: 'An introduction to our LLM Input Prototype: what it explores, how it works and what we found.',
-    overview: `The LLM Input Prototype investigates how AI models respond to users’ questions and which sources they cite to support it. For each submitted query, the prototype prompts several AI models (GPT-5.4 Nano, Gemini 2.5 Flash Lite, Ling 3.0 Flash and DeepSeek V4.1 Flash), captures their answers and citations and stores them for analysis. The prototype analyses each cited page against a playbook of 64 known manipulation techniques, flagging any findings with a confidence score within the final report.`,
+    intro: 'Can evidence of GEO manipulation be identified from the sources that AI systems cite? The LLM Input Prototype collects, analyses, and reviews those sources against a playbook of GEO techniques.',
+    overview: `
+<h3>Why we built it</h3>
+
+<p>Generative Engine Optimisation (GEO) aims to improve the visibility of content within AI-generated answers. While many GEO techniques have been proposed, determining whether a cited source is genuinely attempting to influence AI systems remains difficult. A source appearing in an answer may be unusual, but unusual is not the same as manipulative.</p>
+
+<p>The LLM Input Prototype was developed to investigate this problem. Rather than judging whether an AI answer is correct, it examines the sources selected by AI models and analyses them for characteristics associated with known GEO techniques.</p>
+
+<h3>The investigation pipeline</h3>
+
+<p>Each investigation begins with a user question. The system generates additional query variants, submits them to multiple AI models, collects their responses and citations, retrieves the cited pages, and analyses those pages against a catalogue of 64 GEO manipulation techniques.</p>
+
+<div class="seeding-sites">
+  <div class="seeding-site">
+    <strong>Query Collection</strong>
+    <p>The original query and up to three paraphrased variants are prepared to reduce the effect of phrasing-sensitive results.</p>
+  </div>
+
+  <div class="seeding-site">
+    <strong>AI Observation</strong>
+    <p>Multiple AI models are queried and every response and citation is recorded for later comparison.</p>
+  </div>
+
+  <div class="seeding-site">
+    <strong>Evidence Analysis</strong>
+    <p>Cited sources are retrieved, inspected and analysed against the project's GEO technique playbook.</p>
+  </div>
+</div>
+
+<h3>What gets analysed</h3>
+
+<p>The prototype examines both the visible and hidden content of each cited page. This includes page text, structured data, metadata, hidden elements and other machine-readable content that may not be visible to ordinary visitors.</p>
+
+<p>The analysis process combines observable signals, source content and technique-based assessment to identify potential indicators of GEO manipulation. Potential findings are supported with evidence, confidence scores and alternative explanations before being flagged for review.</p>
+`,
     method: `
 <ol>
 <li><strong>Start an investigation:</strong> Enter your query in the input box on the left and select <em>Run Investigation</em>.</li>
@@ -265,7 +298,7 @@ export const pageFields = {
   llm: [
     { key: 'intro', title: 'Short introduction', prompt: 'Briefly introduce this prototype.' },
     { key: 'overview', number: '01', title: 'About the prototype', prompt: 'Add your introduction here.' },
-    { key: 'method', number: '02', title: 'How it works', prompt: 'Describe your approach here.' },
+    { key: 'method', number: '02', title: 'Using the platform', prompt: 'Describe your approach here.' },
     { key: 'findings', number: '03', title: 'Most crucial findings', prompt: 'Share your findings here.' },
   ],
   seeding: [
